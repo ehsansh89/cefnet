@@ -1,0 +1,28 @@
+{
+  "INVENTORY_DIR": "data/atmospheric_forecasts/gefs/download_plan",
+  "OUT_BASE_DIR": "data/atmospheric_forecasts/gefs",
+  "REGION_GRID_DIR": "GIS/regions",
+  "REGIONS": [
+    "region_01", "region_02", "region_03", "region_04", "region_05",
+    "region_06", "region_07", "region_08", "region_09", "region_10"
+  ],
+  "MEMBERS": [
+    "gec00",
+    "gep01", "gep02", "gep03", "gep04", "gep05",
+    "gep06", "gep07", "gep08", "gep09", "gep10",
+    "gep11", "gep12", "gep13", "gep14", "gep15",
+    "gep16", "gep17", "gep18", "gep19", "gep20",
+    "gep21", "gep22", "gep23", "gep24", "gep25",
+    "gep26", "gep27", "gep28", "gep29", "gep30"
+  ],
+  "MONTHS": ["202401", "202402", "202403", "202404", "202405", "202406", "202407", "202408", "202409", "202410", "202411", "202412", "202501", "202502", "202503", "202504", "202505", "202506", "202507", "202508", "202509", "202510", "202511", "202512"],
+  "INIT_TIME_FILTER": null,
+  "LEAD_MIN": 0,
+  "LEAD_MAX": 84,
+  "LEAD_STEP": 3,
+  "DOWNLOAD_WORKERS": 32,
+  "REQUEST_TIMEOUT": 60,
+  "HTTP_RETRIES": 3,
+  "BBOX_BUFFER_DEG": 1.0,
+  "OVERWRITE": false
+}

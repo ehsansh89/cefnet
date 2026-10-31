@@ -1,0 +1,73 @@
+{
+  "_comment": "v2 (corrected-detrend retrain nn_24lb_72fh_v2) config for paper_fig1_{inference_v2,process,plot}.py — the accuracy comparison figure (Fig. 1). Same STOFS-aligned GFS-deterministic grid as v1; only the model/data paths and the output namespace differ so v2 sits side-by-side with v1 without clobbering it. Select in process/plot via X_PAPER_FIG1_CONFIG=paper_fig1_config_v2.json. Paths relative to repo root.",
+  "RUN_NAME": "nn_24lb_72fh_v2",
+  "REGIONS": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "SEEDS": [
+    1,
+    2,
+    3
+  ],
+  "SPAN_START": "2024-01-01",
+  "SPAN_END": "2025-11-30",
+  "STRIDE_HOURS": 24,
+  "_cycle_hours": "STOFS synoptic hours (00/06/12/18Z) daily via STRIDE_HOURS=24 -> ~696 cycles/hour/region matching the STOFS grid. OFS_EXTRA_HOURS adds NGOFS2-aligned 03/09/15/21Z for regions 6/7 (Gulf). Value may be int or list.",
+  "STOFS_CYCLE_HOURS": [
+    0,
+    6,
+    12,
+    18
+  ],
+  "OFS_EXTRA_HOURS": {
+    "6": [
+      3,
+      9,
+      15,
+      21
+    ],
+    "7": [
+      3,
+      9,
+      15,
+      21
+    ]
+  },
+  "MODEL_CONFIG": "nn_config.json",
+  "STATIONS_CSV": "data/stations_processed_v2/stations_processed.csv",
+  "WATER_LEVELS_H5": "data/water_levels_processed_v2/processed_water_levels.h5",
+  "RESIDUAL_SCALER": "samples/scalers_v2/water_level_residuals.pkl",
+  "GFS_BASE_DIR": "data/atmospheric_forecasts/gfs",
+  "CKPT_TEMPLATE": "models/nn_24lb_72fh_v2/region_{region:02d}/seed_{seed}/best_phase1.pt",
+  "TRAIN_CFG_TEMPLATE": "models/nn_24lb_72fh_v2/region_{region:02d}/seed_{seed}/config.json",
+  "PAPER_INFER_DIR": "outputs/paper/inference",
+  "BATCH_SIZE": 8,
+  "FORCE": false,
+  "_process": "Phase C pairing config. Physics de-bias methods are NOT uniform (deliberate, measured by paper_fig1_sensitivity.py -> outputs/paper/v2/fig1_debias_sensitivity.csv). STOFS: slr_detrend on NOAA cwl (stofs_residual = cwl - harmonic_tide - slr_component). Every OFS: datum_offset (ofs_residual = zeta - datum_offset - harmonic_tide), a per-gauge constant from OFS_DATUM_CSV. Why the split: STOFS cwl is already ~MSL-referenced so the method barely moves it (pooled skill 0.490 slr vs 0.482 datum), but raw OFS zeta sits ~10-30 cm above MSL in the model's own reference, so slr_detrend would leave that constant in and inflate AI skill (ngofs2 0.41->0.25, wcofs 0.88->0.71); datum_offset is the conservative/fair choice where it actually matters. slr_component is the gauge's OWN stored v2 secular component (from WATER_LEVELS_H5). AI is the 3-seed mean. Outputs namespaced under PROCESS_OUT_DIR=outputs/paper/v2 so v1 tables are preserved.",
+  "STOFS_SOURCE": "cwl",
+  "STOFS_RESIDUAL_METHOD": "slr_detrend",
+  "STOFS_MIN_CYCLE": "2024-05-14T12:00",
+  "_stofs_min_cycle": "v2.1.7 anomaly-correction seam: archived STOFS before 2024-05-14 12Z is the uncorrected product (pooled MAE ~18.8 vs ~8.4 cm after; warn-POD 0.17 vs 0.79). Comparisons use the current product only; set to null to reproduce the old full-span numbers.",
+  "OFS_RESIDUAL_METHOD": "datum_offset",
+  "OFS_DATUM_CSV": "data/ofs/datum_offsets_v2.csv",
+  "PEAK_THRESHOLD_M": 0.3,
+  "PROCESS_OUT_DIR": "outputs/paper/v2",
+  "FIG_OUT_DIR": "docs/paper/figures/v4",
+  "_gate": "Inclusion gate: a gauge is scored only if it has >= MIN_TRAIN_YEARS of observed-residual record in the v2 TRAINING split (1980 -> GATE_TRAIN_END). v2 trains through 2021-12-31, so GATE_TRAIN_END is 2021-12-31 (vs v1's 2019). Computed from the v2 H5. Set 0 to disable.",
+  "MIN_TRAIN_YEARS": 5,
+  "GATE_TRAIN_START": "1980-01-01",
+  "GATE_TRAIN_END": "2021-12-31",
+  "_smoke": "Set SMOKE to run a tiny validation (one region, one seed, few cycles) before the full grind.",
+  "SMOKE": false,
+  "SMOKE_REGION": 6,
+  "SMOKE_MAX_CYCLES": 6
+}

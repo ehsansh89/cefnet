@@ -1,0 +1,28 @@
+{
+  "START_DATE": "2024-01-01",
+  "END_DATE": "2025-12-01",
+  "CYCLES": [0, 6, 12, 18],
+  "MEMBERS": [
+    "gec00",
+    "gep01", "gep02", "gep03", "gep04", "gep05",
+    "gep06", "gep07", "gep08", "gep09", "gep10",
+    "gep11", "gep12", "gep13", "gep14", "gep15",
+    "gep16", "gep17", "gep18", "gep19", "gep20",
+    "gep21", "gep22", "gep23", "gep24", "gep25",
+    "gep26", "gep27", "gep28", "gep29", "gep30"
+  ],
+  "LEAD_MIN": 0,
+  "LEAD_MAX": 84,
+  "LEAD_STEP": 3,
+  "VARIABLES": [
+    ["UGRD", "10 m above ground"],
+    ["VGRD", "10 m above ground"],
+    ["PRES", "surface"],
+    ["PRMSL", "mean sea level"]
+  ],
+  "OUT_DIR": "data/atmospheric_forecasts/gefs",
+  "MAX_WORKERS": 32,
+  "HTTP_RETRIES": 3,
+  "REQUEST_TIMEOUT": 30,
+  "FORCE_REBUILD": false
+}

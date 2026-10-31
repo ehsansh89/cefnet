@@ -1,0 +1,25 @@
+__pycache__/
+*.pyc
+
+# local only, never pushed
+_internal/
+_release/
+
+# trained weights are attached to a GitHub Release, not stored in the repo
+models/
+
+# large files that the scripts download or make
+*.zarr/
+*.h5
+*.nc
+*.parquet
+*.mp4
+data/atmospheric/
+data/atmospheric_forecasts/
+data/precomputed_v2/
+data/water_levels/
+data/water_levels_processed_v2/
+data/stofs/
+data/ofs/
+samples/metadata_v2/
+docs/

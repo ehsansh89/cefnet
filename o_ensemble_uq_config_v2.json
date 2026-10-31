@@ -1,0 +1,4 @@
+{
+    "_comment": "v2 wiring for o_ensemble_uq.py (select via X_ENSEMBLE_UQ_CONFIG=o_ensemble_uq_config_v2.json).",
+    "BASE_DIR": "outputs/uq_postprocessing/nn_24lb_72fh_v2/gefs_psfc_v2_raw"
+}

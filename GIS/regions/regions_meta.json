@@ -1,0 +1,102 @@
+[
+  {
+    "name": "region_01",
+    "point_type": "upper_left",
+    "point": [-67.03, 45.09],
+    "core_dims": [32, 37],
+    "res_km": 16.0,
+    "rot_deg": 60.0,
+    "lrgrid_dilation": {"north": 10, "south": 17, "west": 4, "east": 28},
+    "hrgrid_dilation": {"north": 1, "south": 2, "west": 0, "east": 0}
+  },
+  {
+    "name": "region_02",
+    "point_type": "upper_left",
+    "point": [-72.87, 41.47],
+    "core_dims": [32, 39],
+    "res_km": 16.0,
+    "rot_deg": 56.0,
+    "lrgrid_dilation": {"north": 11, "south": 14, "west": 4, "east": 28},
+    "hrgrid_dilation": {"north": 0, "south": 1, "west": 0, "east": 0}
+  },
+  {
+    "name": "region_03",
+    "point_type": "lower_left",
+    "point": [-81.27, 32.08],
+    "core_dims": [32, 34],
+    "res_km": 16.0,
+    "rot_deg": 50.0,
+    "lrgrid_dilation": {"north": 15, "south": 15, "west": 4, "east": 28},
+    "hrgrid_dilation": {"north": 3, "south": 3, "west": 0, "east": 0}
+  },
+  {
+    "name": "region_04",
+    "point_type": "upper_left",
+    "point": [-81.706, 30.80],
+    "core_dims": [32, 37],
+    "res_km": 16.0,
+    "rot_deg": 0.0,
+    "lrgrid_dilation": {"north": 11, "south": 16, "west": 4, "east": 28},
+    "hrgrid_dilation": {"north": 1, "south": 2, "west": 0, "east": 0}
+  },
+  {
+    "name": "region_05",
+    "point_type": "lower_right",
+    "point": [-80.46, 24.72],
+    "core_dims": [32, 36],
+    "res_km": 16.0,
+    "rot_deg": -20.0,
+    "lrgrid_dilation": {"north": 11, "south": 17, "west": 24, "east": 8},
+    "hrgrid_dilation": {"north": 2, "south": 2, "west": 0, "east": 0}
+  },
+  {
+    "name": "region_06",
+    "point_type": "upper_right",
+    "point": [-85.11, 31.14],
+    "core_dims": [36, 32],
+    "res_km": 16.0,
+    "rot_deg": -7.0,
+    "lrgrid_dilation": {"north": 5, "south": 27, "west": 14, "east": 14},
+    "hrgrid_dilation": {"north": 0, "south": 0, "west": 2, "east": 2}
+  },
+  {
+    "name": "region_07",
+    "point_type": "upper_right",
+    "point": [-93.034, 30.858],
+    "core_dims": [40, 32],
+    "res_km": 16.0,
+    "rot_deg": -28.0,
+    "lrgrid_dilation": {"north": 3, "south": 29, "west": 12, "east": 12},
+    "hrgrid_dilation": {"north": 0, "south": 0, "west": 0, "east": 0}
+  },
+  {
+    "name": "region_08",
+    "point_type": "upper_right",
+    "point": [-121.82, 36.71],
+    "core_dims": [32, 40],
+    "res_km": 16.0,
+    "rot_deg": -48.0,
+    "lrgrid_dilation": {"north": 12, "south": 12, "west": 28, "east": 4},
+    "hrgrid_dilation": {"north": 0, "south": 0, "west": 0, "east": 0}
+  },
+  {
+    "name": "region_09",
+    "point_type": "upper_right",
+    "point": [-124.44, 42.776],
+    "core_dims": [32, 40],
+    "res_km": 16.0,
+    "rot_deg": -22.0,
+    "lrgrid_dilation": {"north": 12, "south": 12, "west": 28, "east": 4},
+    "hrgrid_dilation": {"north": 0, "south": 0, "west": 0, "east": 0}
+  },
+  {
+    "name": "region_10",
+    "point_type": "upper_right",
+    "point": [-122.09, 48.888],
+    "core_dims": [32, 40],
+    "res_km": 16.0,
+    "rot_deg": -0.0,
+    "lrgrid_dilation": {"north": 12, "south": 12, "west": 28, "east": 4},
+    "hrgrid_dilation": {"north": 0, "south": 0, "west": 0, "east": 0}
+  }
+]

@@ -1,0 +1,166 @@
+{
+  "_comment": "Fig 1 baseline -> AI-archive catalog. Which AI cycle-hour archives serve each physics baseline. STOFS + on-grid OFS (cbofs/tbofs) reuse the Phase-A 00/06/12/18Z archives; off-grid OFS (ngofs2) needs its own 03/09/15/21Z pass.",
+  "date": "2026-06-27",
+  "stofs": {
+    "model": "stofs2d_global",
+    "regions": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "cycle_hours": [
+      0,
+      6,
+      12,
+      18
+    ],
+    "ai_archive_hours": [
+      "gfs_00z",
+      "gfs_06z",
+      "gfs_12z",
+      "gfs_18z"
+    ],
+    "status": "ready (Phase A, 120 archives)"
+  },
+  "ofs": {
+    "cbofs": {
+      "regions": [
+        2
+      ],
+      "cycle_hours": [
+        0,
+        6,
+        12,
+        18
+      ],
+      "reuse_ai_hours": [
+        "gfs_00z",
+        "gfs_06z",
+        "gfs_12z",
+        "gfs_18z"
+      ],
+      "needs_inference": false,
+      "status": "ready (reuse Phase A)"
+    },
+    "tbofs": {
+      "regions": [
+        5
+      ],
+      "cycle_hours": [
+        0,
+        6,
+        12,
+        18
+      ],
+      "reuse_ai_hours": [
+        "gfs_00z",
+        "gfs_06z",
+        "gfs_12z",
+        "gfs_18z"
+      ],
+      "needs_inference": false,
+      "status": "ready (reuse Phase A)"
+    },
+    "ngofs2": {
+      "regions": [
+        6,
+        7
+      ],
+      "cycle_hours": [
+        3,
+        9,
+        15,
+        21
+      ],
+      "reuse_ai_hours": null,
+      "needs_inference": true,
+      "inference_archives": [
+        "gfs_03z",
+        "gfs_09z",
+        "gfs_15z",
+        "gfs_21z"
+      ],
+      "status": "to_run (B4): 2 regions x 4 hours x 3 seeds = 24 archives"
+    },
+    "dbofs": {
+      "regions": [
+        2
+      ],
+      "cycle_hours": [
+        0,
+        6,
+        12,
+        18
+      ],
+      "reuse_ai_hours": [
+        "gfs_00z",
+        "gfs_06z",
+        "gfs_12z",
+        "gfs_18z"
+      ],
+      "needs_inference": false,
+      "status": "ready (reuse Phase A, on-grid) \u2014 added v2"
+    },
+    "gomofs": {
+      "regions": [
+        1
+      ],
+      "cycle_hours": [
+        0,
+        6,
+        12,
+        18
+      ],
+      "reuse_ai_hours": [
+        "gfs_00z",
+        "gfs_06z",
+        "gfs_12z",
+        "gfs_18z"
+      ],
+      "needs_inference": false,
+      "status": "ready (reuse Phase A, on-grid) \u2014 added v2"
+    },
+    "wcofs": {
+      "regions": [
+        8,
+        9,
+        10
+      ],
+      "cycle_hours": [
+        3
+      ],
+      "inference_archives": [
+        "gfs_03z"
+      ],
+      "needs_inference": true,
+      "status": "ready (West-Coast off-grid 03Z pass) \u2014 added v2"
+    },
+    "sfbofs": {
+      "regions": [
+        9
+      ],
+      "cycle_hours": [
+        3,
+        9,
+        15,
+        21
+      ],
+      "inference_archives": [
+        "gfs_03z",
+        "gfs_09z",
+        "gfs_15z",
+        "gfs_21z"
+      ],
+      "needs_inference": true,
+      "status": "ready (West-Coast off-grid pass) \u2014 added v2"
+    }
+  },
+  "_v2_note": "dbofs (r02) + gomofs (r01) added on-grid with zero new inference. sfbofs (r09) + wcofs (r08/09/10) run off the synoptic grid on the West Coast and would need extra 03(/09/15/21)Z archives there \u2014 NOT added."
+}

@@ -1,0 +1,42 @@
+name: cefnet
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.10
+  - numpy=1.26.4
+  - pandas=2.3.3
+  - scipy=1.15.2
+  - scikit-learn=1.7.2
+  - xarray=2025.6.1
+  - dask=2025.10.0
+  - zarr=2.18.3
+  - numcodecs=0.13.1
+  - netcdf4=1.7.3
+  - h5netcdf=1.7.3
+  - pyarrow=21.0.0
+  - cfgrib=0.9.15.1
+  - eccodes=2.44.0
+  - geopandas=1.1.1
+  - shapely=2.1.2
+  - pyproj=3.7.1
+  - cartopy=0.25.0
+  - contextily=1.6.2
+  - matplotlib=3.10.7
+  - seaborn=0.13.2
+  - plotly=6.3.1
+  - requests=2.32.5
+  - urllib3=2.5.0
+  - fsspec=2026.1.0
+  - s3fs=2026.1.0
+  - tqdm=4.67.1
+  - cdsapi=0.7.7
+  - ffmpeg
+  - pip
+  - pip:
+      # PyTorch: pick the build for your machine at https://pytorch.org (CPU or CUDA).
+      # The models were trained and run with torch 2.11.
+      - torch==2.11.0
+      # PyTables (HDF5 tables for pandas). From pip because conda-forge has no build
+      # for this Python and HDF5 combination on every platform.
+      - tables==3.10.1

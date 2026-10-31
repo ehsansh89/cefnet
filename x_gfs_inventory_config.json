@@ -1,0 +1,18 @@
+{
+  "START_DATE": "2024-01-01",
+  "END_DATE": "2025-11-30",
+  "CYCLES": [0, 6, 12, 18],
+  "LEAD_MIN": 0,
+  "LEAD_MAX": 84,
+  "VARIABLES": [
+    ["UGRD", "10 m above ground"],
+    ["VGRD", "10 m above ground"],
+    ["PRES", "surface"],
+    ["PRMSL", "mean sea level"]
+  ],
+  "OUT_DIR": "data/atmospheric_forecasts/gfs",
+  "MAX_WORKERS": 24,
+  "HTTP_RETRIES": 3,
+  "REQUEST_TIMEOUT": 30,
+  "FORCE_REBUILD": false
+}

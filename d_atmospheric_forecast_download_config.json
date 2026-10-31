@@ -1,0 +1,15 @@
+{
+  "INVENTORY_DIR": "data/atmospheric_forecasts/gfs/download_plan",
+  "OUT_BASE_DIR": "data/atmospheric_forecasts/gfs",
+  "REGION_GRID_DIR": "GIS/regions",
+  "REGIONS": ["region_01", "region_02", "region_03", "region_04", "region_05", "region_06", "region_07", "region_08", "region_09", "region_10"],
+  "MONTHS": ["202401", "202402", "202403", "202404", "202405", "202406", "202407", "202408", "202409", "202410", "202411", "202412", "202501", "202502", "202503", "202504", "202505", "202506", "202507", "202508", "202509", "202510", "202511"],
+  "INIT_TIME_FILTER": null,
+  "LEAD_MIN": 0,
+  "LEAD_MAX": 84,
+  "DOWNLOAD_WORKERS": 24,
+  "REQUEST_TIMEOUT": 60,
+  "HTTP_RETRIES": 3,
+  "BBOX_BUFFER_DEG": 1.0,
+  "OVERWRITE": false
+}

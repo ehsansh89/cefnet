@@ -1,0 +1,9 @@
+{
+  "_comment": "v2 datum bridges: per-(gauge,model) constant offset between OFS zeta (model reference) and the v2-detrended gauge (MSL), estimated from lead-0 nowcast snapshots over each model's full available range. Written to a separate datum_offsets_v2.csv so the v1 file is preserved. Select via X_OFS_DATUM_CONFIG=x_ofs_datum_bridge_config_v2.json. The 4 added models (dbofs/gomofs/sfbofs/wcofs) only have data from mid/late-2024; the original 3 (cbofs/tbofs/ngofs2) go back to 2022 — a wide window uses all available cycles per model.",
+  "OFS_MODELS": ["cbofs", "tbofs", "ngofs2", "dbofs", "gomofs", "sfbofs", "wcofs"],
+  "WATER_LEVELS_H5": "data/water_levels_processed_v2/processed_water_levels.h5",
+  "BASELINE_START": "2022-01-01",
+  "BASELINE_END": "2027-01-01",
+  "MIN_SAMPLES": 200,
+  "OUTPUT_PATH": "data/ofs/datum_offsets_v2.csv"
+}

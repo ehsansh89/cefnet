@@ -1,0 +1,7 @@
+{
+    "lookback_hours": 24,
+    "forecast_hours": 72,
+    "normal_sample_stride_hours": 72,
+    "moderate_sample_stride_hours": 12,
+    "major_sample_stride_hours": 2
+}

@@ -1,0 +1,8 @@
+{
+    "_comment": "v2 wiring for x_ensemble_verify.py (select via X_ENSEMBLE_VERIFY_CONFIG=x_ensemble_verify_config_v2.json). Points at the v2 detrend-retrain ensemble archive and the v2-detrended gauges/stations so residual spaces match the v2 models. Never overwrites the v1 tree.",
+    "IN_BASE": "outputs/inference_ensemble/nn_24lb_72fh_v2/gefs_psfc_v2_raw",
+    "OUT_BASE": "outputs/uq_postprocessing/nn_24lb_72fh_v2/gefs_psfc_v2_raw",
+    "STATIONS_CSV": "data/stations_processed_v2/stations_processed.csv",
+    "WATER_LEVELS_H5": "data/water_levels_processed_v2/processed_water_levels.h5",
+    "STOFS_SOURCE": "cwl"
+}

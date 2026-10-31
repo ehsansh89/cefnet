@@ -1,0 +1,24 @@
+{
+    "_comment": "v2 (corrected-detrend retrain nn_24lb_72fh_v2) 2-year GEFS ensemble archive config for inference_ensemble_v2.py. Same synoptic 00/06/12/18Z cycle grid, span, members, and seeds as the v1 run (gefs_psfc_v1_raw) so the two archives are directly comparable; only the model/data/scaler paths and the experiment tag differ. Pressure contract is PSFC ('v2' = detrend retrain, not the shelved MSLP track). Off-grid OFS anchors (ngofs2/sfbofs 03/09/15/21Z, wcofs 03Z) are NOT in this pass - if a later figure needs them, run an additive pass under a separate experiment tag.",
+
+    "RUN_NAME": "nn_24lb_72fh_v2",
+    "EXPERIMENT_TAG": "gefs_psfc_v2_raw",
+    "REGION_IDS": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    "START_TIME": "2024-01-01",
+    "END_TIME": "2025-12-01",
+    "CYCLE_CADENCE_HOURS": 6,
+    "SEEDS": [1, 2, 3],
+    "MEMBER_FILTER": null,
+    "STATIONS_CSV": "data/stations_processed_v2/stations_processed.csv",
+    "MODEL_CONFIG": "nn_config.json",
+    "TRAIN_CONFIG": "train_config_v2.json",
+    "RESIDUAL_SCALER": "samples/scalers_v2/water_level_residuals.pkl",
+    "WATER_LEVELS_H5": "data/water_levels_processed_v2/processed_water_levels.h5",
+    "GEFS_BASE_DIR": "data/atmospheric_forecasts/gefs",
+    "GFS_BASE_DIR": "data/atmospheric_forecasts/gfs",
+    "OUTPUT_DIR": "outputs/inference_ensemble",
+    "PRESSURE_VAR": "PSFC",
+    "PRESSURE_CONTRACT": "v1_psfc",
+    "MEMBER_CHUNK": 16,
+    "OVERWRITE": false
+}

@@ -1,0 +1,42 @@
+{
+    "_comment": "v2 retrain config. Identical hyperparameters to v1 (train_config.json); only the data paths point to the *_v2 / precomputed_v2 / scalers_v2 set, RUN_NAME is namespaced to keep v1 checkpoints, and the temporal split is rebalanced (train->2021, val 2022-2023, test 2024-2025). Drive region/seed via REGION_ID / SEED env vars; select this config via X_TRAIN_CONFIG=train_config_v2.json.",
+
+    "REGION_ID": 1,
+    "RUN_NAME":  "nn_24lb_72fh_v2",
+
+    "STATIONS_CSV":    "data/stations_processed_v2/stations_processed.csv",
+    "MODEL_CONFIG":    "nn_config.json",
+    "RESIDUAL_SCALER": "samples/scalers_v2/water_level_residuals.pkl",
+    "PRECOMPUTED_DIR": "data/precomputed_v2",
+
+    "STATION_DROP_RATE": 0.1,
+    "USE_WEIGHTED_LOSS": true,
+
+    "TRAIN_PERIOD":     ["1980-01-01", "2021-12-31"],
+    "VAR_TRAIN_PERIOD": ["2001-01-01", "2021-12-31"],
+    "VAL_PERIOD":       ["2022-01-01", "2023-12-31"],
+    "TEST_PERIOD":      ["2024-01-01", "2025-11-30"],
+
+    "TRAINING_MODE":  "deterministic_only",
+    "PHASE1_EPOCHS":  15,
+    "PHASE2_EPOCHS":  5,
+
+    "BATCH_SIZE":              32,
+    "NUM_WORKERS":             4,
+    "LEARNING_RATE":           3e-4,
+    "PHASE2_LEARNING_RATE":    5e-5,
+    "WEIGHT_DECAY":            1e-5,
+    "GRAD_CLIP":               1.0,
+    "WARMUP_STEPS":            200,
+    "SEED":                    1,
+    "KEEP_TOP_K_CHECKPOINTS":  3,
+
+    "D_MODEL":         128,
+    "HIDDEN_DIM":      128,
+    "TOKEN_GRID":      6,
+    "NUM_FUSE_TOKENS": 1,
+    "DROPOUT":         0.1,
+    "HEAD_TYPE":       "mlp",
+
+    "LOG_EVERY_N_STEPS": 25
+}

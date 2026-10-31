@@ -1,0 +1,6 @@
+{
+    "_comment": "Year-split + swap calibration CV on the v2 verify arrays (R3). Only the full 2-yr span is calibrated; the Oct-2024 pilot span has no 2025 half and is skipped by pointing BASE_DIR at the span level if needed.",
+    "BASE_DIR": "outputs/uq_postprocessing/nn_24lb_72fh_v2/gefs_psfc_v2_raw",
+    "TARGET_ALPHA": 0.90,
+    "SPLIT_YEAR": 2025
+}

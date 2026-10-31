@@ -1,0 +1,30 @@
+{
+    "_comment": "v2 seamless inference + sliding-window video over the test period. Drive region/seed/time via REGION_ID / SEED / START_TIME / END_TIME env vars (inference_v2.py). ERA5 (oracle) atmosphere for a clean model eyeball. Outputs to outputs/inference/nn_24lb_72fh_v2/region_XX/{start}_{end}/.",
+
+    "REGION_ID": 1,
+    "RUN_NAME": "nn_24lb_72fh_v2",
+    "CHECKPOINT": "models/nn_24lb_72fh_v2/region_01/seed_1/best_phase1.pt",
+    "START_TIME": "2024-01-01",
+    "END_TIME": "2025-11-30",
+    "STRIDE_HOURS": 72,
+
+    "STATIONS_CSV": "data/stations_processed_v2/stations_processed.csv",
+    "MODEL_CONFIG": "nn_config.json",
+    "TRAIN_CONFIG": "train_config_v2.json",
+    "RESIDUAL_SCALER": "samples/scalers_v2/water_level_residuals.pkl",
+    "WATER_LEVELS_H5": "data/water_levels_processed_v2/processed_water_levels.h5",
+    "OUTPUT_DIR": "outputs/inference",
+
+    "ATMOSPHERIC_SOURCE": "era5",
+    "GFS_BASE_DIR": "data/atmospheric_forecasts/gfs",
+    "BATCH_SIZE": 8,
+
+    "VIZ_STATIONS": "auto",
+    "N_VIZ_STATIONS": 8,
+    "EMIT_VIDEO": true,
+    "VIDEO_FPS": 12,
+    "VIDEO_DPI": 110,
+    "VIDEO_WINDOW_DAYS": 14,
+    "VIDEO_FRAME_STRIDE": 12,
+    "VIDEO_ERROR_LIMIT_CM": 30.0
+}
